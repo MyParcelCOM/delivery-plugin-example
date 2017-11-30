@@ -1,0 +1,9 @@
+{
+  "name": "MyParcel.com Delivery Example",
+  "description": "A small application to show how the delivery plugin and php-sdk could be used together.",
+  "require": {
+    "php": ">=5.6.0",
+    "slim/slim": "^3.1",
+    "slim/php-view": "^2.0"
+  }
+}
