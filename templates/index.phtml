@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Slim 3</title>
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-        <style>
-            body {
-                margin: 50px 0 0 0;
-                padding: 0;
-                width: 100%;
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-                text-align: center;
-                color: #aaa;
-                font-size: 18px;
-            }
+<head>
+  <meta charset="utf-8"/>
+  <title>Delivery Plugin Example</title>
 
-            h1 {
-                color: #719e40;
-                letter-spacing: -3px;
-                font-family: 'Lato', sans-serif;
-                font-size: 100px;
-                font-weight: 200;
-                margin-bottom: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Slim</h1>
-        <div>a microframework for PHP</div>
+  <!-- Include the mp-delivery.css styles. -->
+  <link rel="stylesheet" href="/css/mp-delivery.css">
+  <!-- Include our own custom styles for this project. -->
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <!-- The div that will be used to attach the popup to. -->
+  <!-- Can have any id you want. -->
+  <div id="delivery-window"></div>
 
-        <?php if (isset($name)) : ?>
-            <h2>Hello <?= htmlspecialchars($name); ?>!</h2>
-        <?php else: ?>
-            <p>Try <a href="http://www.slimframework.com">SlimFramework</a></p>
-        <?php endif; ?>
-    </body>
+  <!-- The dummy button we are using to open the popup. -->
+  <button id="popup-btn">Show Popup</button>
+
+  <!-- A small settings form so you don't have to store your secrets online. -->
+  <!-- You can store and retrieve secrets any way you want, we use this only for this example project. -->
+  <form id="settings-form">
+    <label>
+      Google Api Key
+      <input type="text" name="maps_key">
+    </label>
+    <button>Save</button>
+  </form>
+
+  <!-- Include the mp-delivery.js script. -->
+  <script src="/js/mp-delivery.js"></script>
+  <!-- Include our own custom script for this project. -->
+  <script src="/js/app.js"></script>
+</body>
 </html>
