@@ -9,16 +9,28 @@
     // The callback we will use when a delivery was chosen.
     onSuccessCallback: function (pickupLocation) {
       console.log('Pickup location chosen!', pickupLocation)
+
+      // This is the pickupLocation as it was passed in as part of the array of locations.
+      // You could use it here in the JavaScript code or pass it to your backend.
     },
-    // The callback we will use when the delivery popup is closed
-    // without choosing a location.
+    // The callback we will use when the delivery popup is closed without choosing a location.
     onCancelCallback: function () {
-      console.log('delivery window closed.')
+      console.log('Delivery popup closed.')
     },
     // The callback we will use when the delivery popup asks us for
     // pickup locations to show.
-    retrievePickupLocationsCallback: function () {
-      return getPickupLocations()
+    retrievePickupLocationsCallback: function (countryCode, postalCode) {
+      // Do a fetch request to our example app backend to request the locations.
+      // Give the fetch promise back to the delivery plugin.
+      return fetch('/locations/' + countryCode + '/' + postalCode)
+        .then(function (responseObject) {
+          // Let fetch know the response should be handled as JSON.
+          return responseObject.json()
+        })
+        .then(function (response) {
+          // Only return the array of locations in the data property of the JSON response.
+          return response.data
+        })
     }
   }
 
@@ -27,11 +39,18 @@
     // Add the google_maps_key from localStorage to the settings.
     settings.google_maps_key = window.localStorage.getItem('setting_maps_key')
 
-    // Open the delivery popup on the #delivery-window div and pass the settings.
-    window.myparcelcom.openDeliveryWindow('#delivery-window', settings)
+    // Passing the initial postal code and country code. These could be passed down from the backend
+    // as information set on a shipment.
+    const initialLocation = {
+      countryCode: 'NL',
+      postalCode: '2131BC'
+    }
+
+    // Open the delivery popup on the #delivery-window element and pass the settings.
+    window.myparcelcom.openDeliveryWindow('#delivery-window', initialLocation, settings)
   })
 
-  // Save settings to localstorage.
+  // Save settings to localStorage.
   document.getElementById('settings-form').addEventListener('submit', function (e) {
     e.preventDefault()
 
