@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eea9ea6c28446aa0f9846e66bb2f9b0e",
+    "content-hash": "a07ada328a5cf30421f55326ededd7d6",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -220,16 +220,16 @@
         },
         {
             "name": "myparcelcom/sdk",
-            "version": "v0.2.1",
+            "version": "v0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MyParcelCOM/php-sdk.git",
-                "reference": "d5de2bc2d3969781743f9799589851747b2afac1"
+                "reference": "a01655f97306f31f062d8b61b6bdc11a58229c0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MyParcelCOM/php-sdk/zipball/d5de2bc2d3969781743f9799589851747b2afac1",
-                "reference": "d5de2bc2d3969781743f9799589851747b2afac1",
+                "url": "https://api.github.com/repos/MyParcelCOM/php-sdk/zipball/a01655f97306f31f062d8b61b6bdc11a58229c0f",
+                "reference": "a01655f97306f31f062d8b61b6bdc11a58229c0f",
                 "shasum": ""
             },
             "require": {
@@ -252,7 +252,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Package for communicating with the MyParcel.com API.",
-            "time": "2017-12-01T10:16:01+00:00"
+            "time": "2017-12-05T14:31:32+00:00"
         },
         {
             "name": "nikic/fast-route",
