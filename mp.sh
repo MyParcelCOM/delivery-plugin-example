@@ -5,8 +5,8 @@ set -eo pipefail
 if [ $# -gt 0 ]; then
   # Install dependencies.
   if [ $1 == "setup" ]; then
-    ./mp.sh composer install
     cp ./.env.dist ./.env
+    ./mp.sh composer install
 
   # Start the application.
   elif [ $1 == "up" ]; then
