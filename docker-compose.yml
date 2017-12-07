@@ -7,4 +7,4 @@ services:
     volumes:
       - .:/opt/app
     ports:
-      - 9080:80
+      - $APP_PORT:80

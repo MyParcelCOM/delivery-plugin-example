@@ -1,26 +1,57 @@
-# Slim Framework 3 Skeleton Application
+# Delivery Plugin Example
 
-Use this skeleton application to quickly setup and start working on a new Slim Framework 3 application. This application uses the latest Slim 3 with the PHP-View template renderer. It also uses the Monolog logger.
+[![GitHub release](https://img.shields.io/github/release/MyParcelCOM/delivery-plugin-example/all.svg)](https://github.com/MyParcelCOM/delivery-plugin-example)
 
-This skeleton application was built for Composer. This makes setting up a new Slim Framework application quick and easy.
+> An example project built in [Slim Framework](https://www.slimframework.com/) using the MyParcel.com [Delivery Plugin](https://github.com/MyParcelCOM/delivery-plugin) and [API-SDK for PHP](https://github.com/MyParcelCOM/api-sdk-php).
 
-## Install the Application
+## Content
+- [Installation](#installation)
+- [Setup](#setup)
+- [Commands](#commands)
 
-Run this command from the directory in which you want to install your new Slim Framework application.
+### Installation
+The project uses Docker to run a local development environment. To install Docker, follow the steps below for your preferred OS.
 
-    php composer.phar create-project slim/slim-skeleton [my-app-name]
+#### Mac
+Install Docker for Mac from [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/).
 
-Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
+#### Windows
+Install Docker for Windows from [https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/).
 
-* Point your virtual host document root to your new application's `public/` directory.
-* Ensure `logs/` is web writeable.
+#### Linux
+Install Docker by running the following command:
+```bash
+curl -sSL https://get.docker.com/ | sh
+```
 
-To run the application in development, you can also run this command. 
+Then install Docker Compose by following the instructions [here](https://github.com/docker/compose/releases).
 
-	php composer.phar start
+Finally assign yourself to the Docker group:
+```bash
+sudo usermod -aG docker $(whoami)
+```
 
-Run this command to run the test suite
+### Setup
+To setup the project (install dependencies, etc), run the following command:
+```bash
+./mp.sh setup
+```
 
-	php composer.phar test
+#### Credentials
+Afterwards enter your credentials and configuration in the newly created `.env` file.
 
-That's it! Now go build something cool.
+#### Visiting in the browser
+The project wil run at `http://localhost` on the port you specified in your `.env` file.
+
+#### Google Maps Key
+The Delivery Plugin requires a Google Maps API key to run. You can get one [here](https://console.cloud.google.com/apis). Make sure both the `Google Maps JavaScript API` and the `Google Maps Geocoding API` are enabled.
+
+When you visit the project in the browser, input the Google Api key in the field and press *Save*.
+
+### Commands
+The following commands are available:
+- `./mp.sh` - List created containers (for this project).
+- `./mp.sh up` - Start the application.
+- `./mp.sh down` - Stop the application.
+- `./mp.sh setup` - Setup the application.
+- `./mp.sh composer <args>` - Run composer inside the app container.
