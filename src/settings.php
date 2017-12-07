@@ -13,7 +13,7 @@ return [
             'template_path' => __DIR__ . '/../templates/',
         ],
 
-        'myparcelcom_api_url' => getenv('API_URL'),
+        'myparcelcom_api_url'  => getenv('API_URL'),
         'myparcelcom_auth_url' => getenv('AUTH_URL'),
 
         'myparcelcom_credentials' => [
