@@ -4,6 +4,8 @@
   "require": {
     "php": ">=5.6.0",
     "slim/slim": "^3.1",
-    "slim/php-view": "^2.0"
+    "slim/php-view": "^2.0",
+    "myparcelcom/sdk": "^0.2.2",
+    "vlucas/phpdotenv": "^2.4"
   }
 }
