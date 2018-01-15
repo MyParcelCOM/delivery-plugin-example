@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a07ada328a5cf30421f55326ededd7d6",
+    "content-hash": "2f3c44f1b2f8896eee8c1e74262226ec",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -220,16 +220,16 @@
         },
         {
             "name": "myparcelcom/sdk",
-            "version": "v0.2.2",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/MyParcelCOM/php-sdk.git",
-                "reference": "a01655f97306f31f062d8b61b6bdc11a58229c0f"
+                "url": "https://github.com/MyParcelCOM/api-sdk-php.git",
+                "reference": "de20755ce3cb6827591564bcc01903312124f240"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MyParcelCOM/php-sdk/zipball/a01655f97306f31f062d8b61b6bdc11a58229c0f",
-                "reference": "a01655f97306f31f062d8b61b6bdc11a58229c0f",
+                "url": "https://api.github.com/repos/MyParcelCOM/api-sdk-php/zipball/de20755ce3cb6827591564bcc01903312124f240",
+                "reference": "de20755ce3cb6827591564bcc01903312124f240",
                 "shasum": ""
             },
             "require": {
@@ -252,7 +252,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Package for communicating with the MyParcel.com API.",
-            "time": "2017-12-05T14:31:32+00:00"
+            "time": "2017-12-29T12:10:52+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -846,16 +846,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v3.4.1",
+            "version": "v3.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "1accdf8ee7d479e2f6d867a18c99a9a859ba99c0"
+                "reference": "5725378078bc4e1fe3c3414e9cc0e63d7de47fff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/1accdf8ee7d479e2f6d867a18c99a9a859ba99c0",
-                "reference": "1accdf8ee7d479e2f6d867a18c99a9a859ba99c0",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/5725378078bc4e1fe3c3414e9cc0e63d7de47fff",
+                "reference": "5725378078bc4e1fe3c3414e9cc0e63d7de47fff",
                 "shasum": ""
             },
             "require": {
@@ -912,7 +912,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2017-11-19T21:17:36+00:00"
+            "time": "2018-01-03T17:14:19+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
