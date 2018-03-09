@@ -15,12 +15,12 @@ $app->get('/locations/{countryCode}/{postalCode}', function (Request $request, R
     $postalCode = $arguments['postalCode'];
 
     // Load a MyParcelComApi instance.
-    $api = new \MyParcelCom\Sdk\MyParcelComApi(
+    $api = new \MyParcelCom\ApiSdk\MyParcelComApi(
         $this->get('settings')['myparcelcom_api_url']
     );
 
     // Pass your authentication credentials.
-    $authenticator = new \MyParcelCom\Sdk\Authentication\ClientCredentials(
+    $authenticator = new \MyParcelCom\ApiSdk\Authentication\ClientCredentials(
         $this->get('settings')['myparcelcom_credentials']['client_id'],
         $this->get('settings')['myparcelcom_credentials']['client_secret'],
         $this->get('settings')['myparcelcom_auth_url']
@@ -30,8 +30,19 @@ $app->get('/locations/{countryCode}/{postalCode}', function (Request $request, R
     // Get the Pickup Dropoff Locations through the sdk.
     $locations = $api->getPickUpDropOffLocations($countryCode, $postalCode);
 
+    // Merge all the locations to a single array.
+    $allLocations = array_reduce($locations, function (array $combinedLocations, $carrierLocations) {
+        // If the locations for a specific carriers is `null`, it means there
+        // was an error retrieving them.
+        if ($carrierLocations === null) {
+            return $combinedLocations;
+        }
+        /** @var \MyParcelCom\ApiSdk\Collection\CollectionInterface $carrierLocations */
+        return array_merge($combinedLocations, $carrierLocations->get());
+    }, []);
+
     // Pass through retrieved locations as a json response.
     return $response->withJson([
-        'data' => $locations
+        'data' => $allLocations,
     ]);
 });
