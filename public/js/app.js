@@ -31,6 +31,20 @@
           // Only return the array of locations in the data property of the JSON response.
           return response.data
         })
+    },
+    // The callback we will use when the delivery popup asks us for carriers.
+    retrieveCarriersCallback: function () {
+      // Do a fetch request to our example app backend to request the carriers.
+      // Give the fetch promise back to the delivery plugin.
+      return fetch('/carriers')
+        .then(function (responseObject) {
+          // Let fetch know the response should be handled as JSON.
+          return responseObject.json()
+        })
+        .then(function (response) {
+          // Only return the array of carriers in the data property of the JSON response.
+          return response.data
+        })
     }
   }
 
@@ -42,8 +56,8 @@
     // Passing the initial postal code and country code. These could be passed down from the backend
     // as information set on a shipment.
     const initialLocation = {
-      countryCode: 'NL',
-      postalCode: '2131BC'
+      countryCode: 'GB',
+      postalCode: 'SE1 7GL'
     }
 
     // Open the delivery popup on the #delivery-window element and pass the settings.

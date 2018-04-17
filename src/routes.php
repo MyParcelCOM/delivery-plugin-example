@@ -37,6 +37,7 @@ $app->get('/locations/{countryCode}/{postalCode}', function (Request $request, R
         if ($carrierLocations === null) {
             return $combinedLocations;
         }
+
         /** @var \MyParcelCom\ApiSdk\Collection\CollectionInterface $carrierLocations */
         return array_merge($combinedLocations, $carrierLocations->get());
     }, []);
@@ -44,5 +45,26 @@ $app->get('/locations/{countryCode}/{postalCode}', function (Request $request, R
     // Pass through retrieved locations as a json response.
     return $response->withJson([
         'data' => $allLocations,
+    ]);
+});
+
+// The route to retrieve the Carriers.
+$app->get('/carriers', function (Request $request, Response $response, array $arguments) {
+    // Load a MyParcelComApi instance.
+    $api = new \MyParcelCom\ApiSdk\MyParcelComApi(
+        $this->get('settings')['myparcelcom_api_url']
+    );
+
+    // Pass your authentication credentials.
+    $authenticator = new \MyParcelCom\ApiSdk\Authentication\ClientCredentials(
+        $this->get('settings')['myparcelcom_credentials']['client_id'],
+        $this->get('settings')['myparcelcom_credentials']['client_secret'],
+        $this->get('settings')['myparcelcom_auth_url']
+    );
+    $api->authenticate($authenticator);
+
+    // Pass through retrieved locations as a json response.
+    return $response->withJson([
+        'data' => $api->getCarriers()->get(),
     ]);
 });
