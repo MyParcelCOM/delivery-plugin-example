@@ -71,10 +71,6 @@
     pointer-events: none;
     color: rgba(0, 0, 0, 0.1); }
 
-body {
-  overflow: hidden;
-  padding-top: 70px; }
-
 #myparcelcom-delivery-overlay {
   display: flex;
   align-items: center;
@@ -420,6 +416,13 @@ a#myparcelcom-delivery-close-button {
   padding-top: 8px;
   overflow: hidden;
   padding-bottom: 32px; }
+
+#myparcelcom-map .myparcelcom-info-window-carriers {
+  margin: 8px 0; }
+  #myparcelcom-map .myparcelcom-info-window-carriers img {
+    max-height: 20px;
+    max-width: 70px;
+    margin-right: 16px; }
 
 #myparcelcom-info-window a {
   display: inline-block;
