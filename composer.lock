@@ -849,16 +849,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v3.4.9",
+            "version": "v3.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "51a9eef3091b2c06f63d8b1b98de9d101b5e0e77"
+                "reference": "99bd0bc61d1de38a7ab3d98ceab00e46ad7385fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/51a9eef3091b2c06f63d8b1b98de9d101b5e0e77",
-                "reference": "51a9eef3091b2c06f63d8b1b98de9d101b5e0e77",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/99bd0bc61d1de38a7ab3d98ceab00e46ad7385fa",
+                "reference": "99bd0bc61d1de38a7ab3d98ceab00e46ad7385fa",
                 "shasum": ""
             },
             "require": {
@@ -915,7 +915,7 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2018-04-27T05:49:57+00:00"
+            "time": "2018-06-21T12:16:06+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
